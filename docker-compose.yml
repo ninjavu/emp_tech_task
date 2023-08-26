@@ -29,6 +29,8 @@ services:
       - 3000:3000
     volumes:
       - ./:/app
+    stdin_open: true
+    tty: true
 
   sidekiq:
     build:
@@ -41,6 +43,8 @@ services:
       - .env
     volumes:
       - ./:/app
+    stdin_open: true
+    tty: true
 
 volumes:
   postgres:
