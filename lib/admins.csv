@@ -1,0 +1,5 @@
+name,description,email,status
+Admin 1,Описание 1,1,acfdtive
+Admin 2,Описание 2,admin@example.com,inactive
+Admin 3,Описание 3,admin2@example.com,active
+Admin 3,Описание 3,admin3@example.com,active

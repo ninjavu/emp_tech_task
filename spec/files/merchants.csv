@@ -1,0 +1,6 @@
+name,description,email,status
+Merchant 1,Description 1,merchant1@example.com,active
+Merchant 2,Description 2,merchant2@example.com,inactive
+Merchant 3,Description 3,merchant3@example.com,wrong_status
+Merchant 4,Description 4,merchant4@example.com,active
+Merchant 5,Description 5,merchant5@example.com,active
