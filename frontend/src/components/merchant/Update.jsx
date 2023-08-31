@@ -50,7 +50,7 @@ export const Update = () => {
               name='name'
               value={ name }
             />
-            <span className='text-danger' id='name-error'>{ validationErrors?.name ? validationErrors?.name[0] : null }</span>
+            <span className='text-danger' id='name-update-error'>{ validationErrors?.name ? validationErrors?.name[0] : null }</span>
           </div>
           <div className='form-group mb-2'>
             <span>Description: </span>

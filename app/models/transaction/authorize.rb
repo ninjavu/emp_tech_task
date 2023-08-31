@@ -7,7 +7,7 @@ class Transaction::Authorize < Transaction
   has_one :charge_transaction,
           class_name: 'Transaction::Charge',
           foreign_key: 'transaction_reference'
-          
+
   has_one :reversal_transaction,
           class_name: 'Transaction::Reversal',
           foreign_key: 'transaction_reference'

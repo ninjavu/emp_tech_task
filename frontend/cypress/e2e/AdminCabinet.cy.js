@@ -53,18 +53,24 @@ describe('Home', { testIsolation: false }, () => {
         cy.intercept('PATCH', `${Cypress.env('apiUrl')}/merchants/**`, {
           statusCode: 400,
           body: {
-            errors: { email: ['email already exist'] }
+            errors: { name: ['name already exist'] }
           },
         })
       })
 
       it('should contains entered values', () => {
-        cy.get('input[name=name]').clear().type('a').should('have.value', 'a')
+        cy.get('input[name=name]').clear().type('t').should('have.value', 't')
       })
 
       it('should display validation errors', () => {
         cy.get('button').contains('Update Merchant').click()
-        cy.get('span[id=name-error]').should('have.text', 'must be at least 3 symbols')
+        cy.get('span[id=name-update-error]').should('have.text', 'must be at least 3 symbols')
+      })
+
+      it('should display server errors', () => {
+        cy.get('input[name=name]').clear().type('test')
+        cy.get('button').contains('Update Merchant').click()
+        cy.get('span[id=name-update-error]').should('have.text', 'name already exist')
       })
     })
 

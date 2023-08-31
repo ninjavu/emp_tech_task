@@ -5,7 +5,7 @@ class Transaction < ApplicationRecord
 
   STATUSES = %w[approved reversed refunded error].freeze
   REF_STATUSES = %w[approved refunded].freeze
-  TRANSACTION_TYPES = %w[authorize charge refund reversal]
+  TRANSACTION_TYPES = %w[authorize charge refund reversal].freeze
   EXPIRATION = 1.hour.ago
 
   enum status: STATUSES
@@ -37,11 +37,9 @@ class Transaction < ApplicationRecord
   end
 
   def self.build_transaction_type_interactor_name(transaction_type:)
-    begin
-      "Transaction::#{transaction_type.capitalize}Interactor".constantize
-    rescue
-      nil
-    end
+    "Transaction::#{transaction_type.capitalize}Interactor".constantize
+  rescue StandardError
+    nil
   end
 
   def able_to_reference?

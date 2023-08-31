@@ -26,7 +26,7 @@ RSpec.describe AuthenticateInteractor, type: :interactor do
 
       it 'it defines role' do
         ctx = interactor.call
-        expect(ctx.role).to eq(admin.user.userable_type)
+        expect(ctx.role).to eq(admin.user.userable_type.downcase)
       end
 
       it 'it initialize token' do
@@ -46,7 +46,7 @@ RSpec.describe AuthenticateInteractor, type: :interactor do
 
       it 'it defines role' do
         ctx = interactor.call
-        expect(ctx.role).to eq(merchant.user.userable_type)
+        expect(ctx.role).to eq(merchant.user.userable_type.downcase)
       end
 
       it 'it initialize token' do

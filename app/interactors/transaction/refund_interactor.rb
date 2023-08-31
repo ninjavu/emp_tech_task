@@ -33,15 +33,15 @@ class Transaction::RefundInteractor
   end
 
   def check_amounts
-    unless ctx.ref_transaction.amount == ctx.params[:amount]
-      raise ActiveRecord::RecordNotFound, 'amount differs from authorize transaction'
-    end
+    return if ctx.ref_transaction.amount == ctx.params[:amount]
+
+    raise ActiveRecord::RecordNotFound, 'amount differs from authorize transaction'
   end
 
   def check_if_transaction_exists
-    if ctx.ref_transaction.refund_transaction
-      raise ActiveRecord::RecordNotFound, 'refund transaction for this authorize transaction already exists'
-    end
+    return unless ctx.ref_transaction.refund_transaction
+
+    raise ActiveRecord::RecordNotFound, 'refund transaction for this authorize transaction already exists'
   end
 
   def define_status

@@ -16,7 +16,7 @@ RSpec.describe Merchant, type: :model do
   describe '#total_transaction_sum' do
     let!(:merchant) { create(:merchant, :with_approved_charged_transactions) }
 
-    it "should calculate sum of approved charge transactions right" do
+    it 'should calculate sum of approved charge transactions right' do
       expect(Merchant.find(merchant.id).total_transaction_sum).to eq(100)
     end
   end

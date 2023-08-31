@@ -22,7 +22,7 @@ describe('Success auth', { testIsolation: false }, () => {
   let userData = {
     email: 'test@test.com',
     token: '123123123',
-    role: 'admin'
+    role: 'admin',
   }
 
   beforeEach(() => {

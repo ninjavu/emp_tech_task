@@ -57,7 +57,11 @@ class Transaction::BaseInteractor
 
   def check_params
     raise ActiveRecord::RecordNotFound, 'Please, write :type parameter' unless ctx.params[:type]
-    raise ActiveRecord::RecordNotFound, 'unknown transaction type' unless ctx.params[:type].in?(Transaction::TRANSACTION_TYPES)
+
+    return if ctx.params[:type].in?(Transaction::TRANSACTION_TYPES)
+
+    raise ActiveRecord::RecordNotFound,
+          'unknown transaction type'
   end
 
   def authenticate
@@ -76,13 +80,13 @@ class Transaction::BaseInteractor
 
     transaction_ctx = Transaction.build_transaction_type_interactor_name(transaction_type:)&.new(
       params: ctx.params
-    ).call
-  
+    )&.call
+
     if transaction_ctx&.success?
       @ctx.transaction_ctx = transaction_ctx
     else
       @ctx = transaction_ctx
-      # Можно дописать кастомную ошибку Interactor::StopOperation 
+      # Можно дописать кастомную ошибку Interactor::StopOperation
       # и от нее райзит уже с дочерним контекстом
     end
   end

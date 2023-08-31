@@ -34,17 +34,16 @@ class Transaction::ReversalInteractor
   end
 
   def check_amounts
-    unless ctx.ref_transaction.amount == ctx.params[:amount]
-      raise ActiveRecord::RecordNotFound, 'amount differs from authorize transaction'
-    end
+    return if ctx.ref_transaction.amount == ctx.params[:amount]
+
+    raise ActiveRecord::RecordNotFound, 'amount differs from authorize transaction'
   end
 
   def check_if_transaction_exists
-    if ctx.ref_transaction.reversal_transaction
-      raise ActiveRecord::RecordNotFound, 'reversal transaction for this authorize transaction already exists'
-    end
-  end
+    return unless ctx.ref_transaction.reversal_transaction
 
+    raise ActiveRecord::RecordNotFound, 'reversal transaction for this authorize transaction already exists'
+  end
 
   def define_status
     ctx.status = ctx.ref_transaction.able_to_reference? ? :approved : :error
