@@ -11,15 +11,14 @@ class TransactionsController < ApplicationController
   def create
     ctx = Transaction::BaseInteractor.new(
       token: request.headers['Authorization'],
-      params:
+      params: Transaction::ParamsCreator.new(request:).call
     ).call
 
-    if ctx.success?
-      render json: { transaction: ctx.transaction_ctx.transaction }, status: ctx.http_status
-    else
-      render json: {
-        errors: ctx.errors
-      }, status: ctx.http_status
+    respond_to do |format|
+      data = ctx.success? ? { transaction_id: ctx.transaction.id } : { errors: ctx.errors }
+
+      format.json { render json: data, status: ctx.http_status }
+      format.xml { render xml: data.to_xml(root: :transaction), status: ctx.http_status }
     end
   end
 end
