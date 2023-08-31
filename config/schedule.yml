@@ -1,0 +1,4 @@
+delete_expired_transactions:
+  cron: "0 * * * *"
+  class: "Transaction::DestroyExpiredJob"
+  queue: "default"

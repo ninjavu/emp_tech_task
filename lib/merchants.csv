@@ -1,0 +1,5 @@
+name,description,email,status
+Merchant 1,Описание 1,1,acfdtive
+Merchant 2,Описание 2,merchant2@example.com,inactive
+Merchant 3,Описание 3,merchant3@example.com,active
+Merchant 3,Описание 3,merchant4@example.com,active
