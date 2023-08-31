@@ -1,0 +1,8 @@
+{
+  "email": {
+    "isEmpty": true,
+    "isEmail": true,
+    "minLength": 3,
+    "maxLength": 30
+  }
+}

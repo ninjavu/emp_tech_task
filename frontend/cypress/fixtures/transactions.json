@@ -1,0 +1,81 @@
+{
+  "transactions": [
+    {
+      "id": "e14a0a1d-ce38-4881-a94e-5b3fe37d6f87",
+      "amount": 100,
+      "status": "approved",
+      "customer_email": "some@ma.com",
+      "customer_phone": "111111111",
+      "merchant_id": 42,
+      "transaction_reference": "c2d5c936-b8cd-44dd-88a0-32b2e95807fd",
+      "created_at": "2023-08-25T12:42:32.739Z",
+      "updated_at": "2023-08-25T12:42:32.739Z"
+    },
+    {
+      "id": "c2d5c936-b8cd-44dd-88a0-32b2e95807fd",
+      "amount": 100,
+      "status": "reversed",
+      "customer_email": "some@ma.com",
+      "customer_phone": "111111111",
+      "merchant_id": 42,
+      "transaction_reference": null,
+      "created_at": "2023-08-25T12:42:10.044Z",
+      "updated_at": "2023-08-25T12:42:32.765Z"
+    },
+    {
+      "id": "15c82ca7-e394-4cb6-b375-eeef75e7e48a",
+      "amount": 122,
+      "status": "error",
+      "customer_email": "some@ma.com",
+      "customer_phone": "111111111",
+      "merchant_id": 42,
+      "transaction_reference": "c2d5c936-b8cd-44dd-88a0-32b2e95807fd",
+      "created_at": "2023-08-25T12:43:07.640Z",
+      "updated_at": "2023-08-25T12:43:07.640Z"
+    },
+    {
+      "id": "dbff7ab1-4c23-4457-b3df-e7f058996c67",
+      "amount": 231,
+      "status": "approved",
+      "customer_email": "some@ma.com",
+      "customer_phone": "111111111",
+      "merchant_id": 42,
+      "transaction_reference": "97cabc0d-84f9-4247-9ded-daa4388d7205",
+      "created_at": "2023-08-25T13:23:17.101Z",
+      "updated_at": "2023-08-25T13:23:17.101Z"
+    },
+    {
+      "id": "97cabc0d-84f9-4247-9ded-daa4388d7205",
+      "amount": 100,
+      "status": "reversed",
+      "customer_email": "some@ma.com",
+      "customer_phone": "111111111",
+      "merchant_id": 42,
+      "transaction_reference": null,
+      "created_at": "2023-08-25T13:20:23.065Z",
+      "updated_at": "2023-08-25T13:23:17.114Z"
+    },
+    {
+      "id": "07ffadc6-012c-4d35-8456-c7445f3129d8",
+      "amount": 900,
+      "status": "error",
+      "customer_email": "some@ma.com",
+      "customer_phone": "111111111",
+      "merchant_id": 42,
+      "transaction_reference": "97cabc0d-84f9-4247-9ded-daa4388d7205",
+      "created_at": "2023-08-25T13:23:21.944Z",
+      "updated_at": "2023-08-25T13:23:21.944Z"
+    },
+    {
+      "id": "b64106a4-c6a3-43f6-b075-4bf7fe30b3e7",
+      "amount": 100,
+      "status": "approved",
+      "customer_email": "some@ma.com",
+      "customer_phone": "111111111",
+      "merchant_id": 42,
+      "transaction_reference": null,
+      "created_at": "2023-08-25T16:13:39.232Z",
+      "updated_at": "2023-08-25T16:13:39.232Z"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "email": {
+    "isEmpty": true,
+    "isEmail": true,
+    "minLength": 3,
+    "maxLength": 30
+  },
+  "name": {
+    "isEmpty": true,
+    "minLength": 3,
+    "maxLength": 30
+  },
+  "description": {
+    "isEmpty": false,
+    "minLength": 3,
+    "maxLength": 100
+  }
+}
