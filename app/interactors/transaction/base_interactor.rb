@@ -25,7 +25,6 @@ class Transaction::BaseInteractor
   private
 
   def permit_params
-    # Можно обмернуть в форм объект
     ctx.params = params.permit(
       :merchant_id,
       :type,
@@ -35,15 +34,7 @@ class Transaction::BaseInteractor
       :transaction_reference
     )
 
-    # params = params.permit(
-    #   :merchant_id,
-    #   :type,
-    #   :amount,
-    #   :customer_email,
-    #   :customer_phone,
-    #   :transaction_reference
-    # )
-
+    # [TODO]
     # contract_ctx = TransactionContract.new.call(
     #   params
     # ).call
@@ -86,8 +77,7 @@ class Transaction::BaseInteractor
       @ctx.transaction_ctx = transaction_ctx
     else
       @ctx = transaction_ctx
-      # Можно дописать кастомную ошибку Interactor::StopOperation
-      # и от нее райзит уже с дочерним контекстом
+      # [TODO] Interactor::StopOperation
     end
   end
 
